@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>iPhone X UI/UX Design</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+        <link rel="stylesheet" href="./style.css">
+    </head>
+
+    <body>
+        <div class="iPhone12">
+            <div class="top-bar-left">
+                <span id="hour" class="time">10</span><span class="time html-icon">&#8758</span>
+                <span id="minutes" class="time">25</span><span class="time html-icon">&#8758</span>
+                <span id="second" class="time">60</span>
+            </div>
+            <div class="top-bar-right">
+                <i class="fas fa-signal"></i>
+                <i class="fas fa-wifi"></i>
+                <i class="fas fa-battery-full"></i>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        setInterval(() => {
+            let date = new Date();
+            let hours = date.getHours();
+            let minutes = date.getMinutes();
+            let second = date.getSeconds();
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            second = second < 10 ? '0' + second : second;
+
+            document.getElementById('hour').innerHTML = hours;
+            document.getElementById('minutes').innerHTML = minutes;
+            document.getElementById('second').innerHTML = second;
+        }, 500)
+    </script>
+
+</html>
