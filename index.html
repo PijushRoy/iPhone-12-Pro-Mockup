@@ -14,9 +14,11 @@
         <div class="iPhone12">
             <div class="font-spk-cam"></div>
             <div class="top-bar-left">
-                <span id="hour" class="time">10</span><span class="time html-icon">&#8758</span>
-                <span id="minutes" class="time">25</span><span class="time html-icon">&#8758</span>
-                <span id="second" class="time">60</span>
+                <span id="hour" class="time">10</span>
+                <span class="time html-icon">&#8758</span>
+                <span id="minutes" class="time">25</span>
+                <!-- <span class="time html-icon">&#8758</span> -->
+                <!-- <span id="second" class="time">60</span> -->
             </div>
             <div class="top-bar-right">
                 <i class="fas fa-signal"></i>
@@ -31,16 +33,16 @@
             let date = new Date();
             let hours = date.getHours();
             let minutes = date.getMinutes();
-            let second = date.getSeconds();
+            // let second = date.getSeconds();
             hours = hours % 12;
             hours = hours ? hours : 12; // the hour '0' should be '12'
             hours = hours < 10 ? '0' + hours : hours;
             minutes = minutes < 10 ? '0' + minutes : minutes;
-            second = second < 10 ? '0' + second : second;
+            // second = second < 10 ? '0' + second : second;
 
             document.getElementById('hour').innerHTML = hours;
             document.getElementById('minutes').innerHTML = minutes;
-            document.getElementById('second').innerHTML = second;
+            // document.getElementById('second').innerHTML = second;
         }, 500)
     </script>
 
